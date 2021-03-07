@@ -1,70 +1,195 @@
-# Getting Started with Create React App
+### 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="" alt="Logo">
+  </a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  <h1 align="center">FLIXADOR</h1>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  <p align="center">
+    What movie do you want to watch?
+    <br />
+    <a href="https://github.com/stephp23/flixador-react-redux-app"><strong>🔍Explore the Docs »</strong></a>
+    <br />
+    <br />
+    <a href="NETLIFYLINK">👀 View Demo</a>
+    ·
+    <a href="https://github.com/stephp23/flixador-react-redux-app">🐛Report Bug</a>
+    ·
+    <a href="https://github.com/stephp23/flixador-react-redux-app">✍🏽Request Feature</a>
+  </p>
+</p>
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#installation">Installation</a>
+      <li>
+      <a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#description">Description</a></li>
+         <li><a href="#wireframes">Wireframes</a></li>
+         <li><a href="#component-hierarchy">Component Hierarchy</a></li>
+         <li><a href="#api">API</a></li>
+         <li><a href="#mvp">MVP</a></li>
+         <li><a href="#post-mvp">Post MVP</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#our-journey">Our Journey</a>
+      <ul>
+        <li><a href="#challenges-we-ran-into">Challenges We Ran Into</a></li>
+        <li><a href="#accomplishments">Accomplishments</a></li>
+        <li><a href="#what-we-learned">What We Learned</a></li>
+      </ul>
+    </li>
+    <li><a href="#whats-next">What's Next</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#our-team">Our Team</a></li>
+  </ol>
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<!-- ABOUT THE PROJECT -->
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Overview 
 
-### `yarn eject`
+## Description 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Flixador is a movie searching app for those that want to keep up with the latest in movie releases. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ <a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="" alt="Logo">
+  </a>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Wireframes - Desktop
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="" alt="Logo">
+  </a>
+ 
+ ## Wireframes - Tablet
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ <a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="" alt="Logo">
+  </a>
 
-### Code Splitting
+ ## Wireframes - Mobile
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+  <a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="" alt="Logo">
+  </a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Component Hierarchy 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="" alt="Logo">
+  </a>
 
-### Advanced Configuration
+## API 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+We are using the [OMDb API](https://www.omdbapi.com/) which gives the following information:
 
-### Deployment
+*  
+* 
+* 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  
+## MVP 
 
-### `yarn build` fails to minify
+The Flixador MVP version will have the following features:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Responsive design on _desktop, tablet and mobile_
+* Genre category search for movies
+* Keyword search
+* 
+
+## Post MVP 
+
+After the Flixador MVP, we will explore adding the following features:
+
+
+* 
+* 
+
+
+## Challenges We Ran Into 
+ 
+
+* 
+  
+* 
+
+## Accomplishments 
+
+
+* 
+* 
+
+## What We Learned 
+
+
+* 
+  
+* 
+
+
+<!-- BUILT WITH -->
+## Built With 
+
+This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux,Material UI, and Tailwind CSS on the frontend.
+
+* [JavaScript](https://javascript.com)
+* [ReactJS](https://reactjs.org)
+* [OMDb API](https://www.omdbapi.com/)
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [Figma](https://www.figma.com/)
+* [Adobe Photoshop](https://www.adobe.com/products/photoshop.html) 
+* [Img Shields](https://shields.io)
+* [FontAwesome](https://fontawesome.com/)
+* [Trello](https://www.trello.com/)
+
+<!-- CONTACT -->
+## Our Team
+
+* Ayman Omer - [LinkedIn](https://www.linkedin.com/in/ayman-omer-b2429b1ab/)
+* Stephanie Pena - [LinkedIn](https://www.linkedin.com/in/stephanieapena/)
+* Katherine Fernandez - [LinkedIn](https://www.linkedin.com/in/katfernandez22/)
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/stephp23/flixador-react-redux-app
+[contributors-url]: https://github.com/stephp23/flixador-react-redux-app
+[forks-shield]: https://img.shields.io/github/forks/stephp23/flixador-react-redux-app
+[forks-url]: https://github.com/stephp23/flixador-react-redux-app
+[stars-shield]: https://img.shields.io/github/stars/stephp23/flixador-react-redux-app
+[stars-url]: https://github.com/stephp23/flixador-react-redux-app
+[issues-shield]: https://img.shields.io/github/issues/stephp23/flixador-react-redux-app
+[issues-url]: https://github.com/stephp23/flixador-react-redux-app
+[license-shield]: https://img.shields.io/github/license/stephp23/flixador-react-redux-app
+[license-url]: https://github.com/stephp23/flixador-react-redux-app
+[product-screenshot]: 
