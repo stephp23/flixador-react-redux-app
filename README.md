@@ -68,7 +68,7 @@
 
 ## Description
 
-Flixador is a movie searching app for those that want to keep up with the latest in movie releases.
+Flixador is a movie searching app for those that want to keep up with the latest in movie releases. You can scroll through hundreds of movies and series titles right from the home screen. In the mood to only watch a series or only movies. You can also browse through hundreds of titles and their descriptions!
 
  <a href="https://github.com/stephp23/flixador-react-redux-app">
     <img src="" alt="Logo">
