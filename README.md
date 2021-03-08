@@ -10,18 +10,18 @@
 <br />
 <p align="center">
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="logo" alt="Logo">
   </a>
 
   <h1 align="center">FLIXADOR</h1>
 
   <p align="center">
-    What movie do you want to watch?
+    What are you in the mood to watch?
     <br />
     <a href="https://github.com/stephp23/flixador-react-redux-app"><strong>🔍Explore the Docs »</strong></a>
     <br />
     <br />
-    <a href="NETLIFYLINK">👀 View Demo</a>
+    <a href="">👀 View Demo</a>
     ·
     <a href="https://github.com/stephp23/flixador-react-redux-app">🐛Report Bug</a>
     ·
@@ -76,75 +76,68 @@ Flixador is a movie searching app for those that want to keep up with the latest
 ## Wireframes - Desktop
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="src\images\desktop.png" alt="Logo">
   </a>
  
  ## Wireframes - Tablet
 
  <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="src\images\tablet.png" alt="Logo">
   </a>
 
 ## Wireframes - Mobile
 
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="src\images\mobile.png" alt="Logo">
   </a>
 
 ## Component Hierarchy
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="MISSING" alt="Logo">
   </a>
 
 ## API
 
-We are using the [OMDb API](https://www.omdbapi.com/) which gives the following information:
+We are using the [OMDb (Open Movie Database) API](https://www.omdbapi.com/) which gives the following information:
 
--
--
--
+- Categories include movies, series, or episodes
+- Access to valid IMDb ID numbers for movies and shows
+- Movie or series title to search for
+- Year of release
+- Short or full plot description 
+
 
 ## MVP
 
 The Flixador MVP version will have the following features:
 
 - Responsive design on _desktop, tablet and mobile_
-- Genre category search for movies
-- Keyword search
--
+- Genre category search for movies and shows
+- Side scrolling feature to view category results
+- Title keyword search 
+- Search feature for only movie titles
+- Search feature for only show titles
+- Team information section
 
 ## Post MVP
 
 After the Flixador MVP, we will explore adding the following features:
 
--
--
+- In-screen trailer feature
 
-## Challenges We Ran Into
-
--
--
-
-## Accomplishments
-
--
--
-
-## What We Learned
-
--
--
 
 <!-- BUILT WITH -->
 
 ## Built With
 
-This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux,Material UI, and Tailwind CSS on the frontend.
+This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux, CSS, and Material UI on the frontend. Dependencies needed for the project are redux, react-redux, redux-thunk, redux-devtools-extension/developmentOnly. 
+
 
 - [JavaScript](https://javascript.com)
 - [ReactJS](https://reactjs.org)
 - [OMDb API](https://www.omdbapi.com/)
+- [Material IU](https://material-ui.com/)
 
 <!-- ACKNOWLEDGEMENTS -->
 
@@ -178,4 +171,4 @@ This project was conceptualized by building wireframes and prototypes using Figm
 [license-shield]: https://img.shields.io/github/license/stephp23/flixador-react-redux-app
 [license-url]: https://github.com/stephp23/flixador-react-redux-app
 
-[product-screenshot]:
+
