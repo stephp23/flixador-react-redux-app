@@ -10,7 +10,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="https://giphy.com/gifs/sandiegozoo-baby-animals-big-cats-cheetahs-tsRqkQCs972nTvtojc" alt="Cheetah">
+    <img src="src\images\baby_cheetah.png" alt="Cheetah">
     <img src="logo" alt="Logo">
   </a>
 
