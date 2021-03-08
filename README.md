@@ -138,7 +138,7 @@ This project was conceptualized by building wireframes and prototypes using Figm
 - [JavaScript](https://javascript.com)
 - [ReactJS](https://reactjs.org)
 - [OMDb API](https://www.omdbapi.com/)
-- [Material IU](https://material-ui.com/)
+- [Material UI](https://material-ui.com/)
 
 <!-- ACKNOWLEDGEMENTS -->
 
