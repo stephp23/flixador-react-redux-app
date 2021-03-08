@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://github.com/stephp23/flixador-react-redux-app">
     <img src="src\images\baby_cheetah.png" alt="Cheetah">
-    <img src="logo" alt="Logo">
+    <img src="src\images\banner.png" alt="Logo">
   </a>
 
   <h1 align="center">FLIXADOR</h1>
@@ -71,7 +71,7 @@
 Flixador is a movie searching app for those that want to keep up with the latest in movie releases. You can scroll through hundreds of movies and series titles right from the home screen. In the mood to only watch a series or only movies. You can also browse through hundreds of titles and their descriptions!
 
  <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="" alt="Logo">
+    <img src="src\images\banner.png" alt="Logo">
   </a>
 
 ## Wireframes - Desktop
@@ -95,6 +95,7 @@ Flixador is a movie searching app for those that want to keep up with the latest
 ## Component Hierarchy
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
+  <img src="src/images/componenthierarchy.png" alt="ComponentHierachy">
   </a>
 
 ## API
