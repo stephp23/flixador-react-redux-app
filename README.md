@@ -10,6 +10,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/stephp23/flixador-react-redux-app">
+    <img src="src\images\baby_cheetah.png" alt="Cheetah">
     <img src="logo" alt="Logo">
   </a>
 
@@ -94,7 +95,6 @@ Flixador is a movie searching app for those that want to keep up with the latest
 ## Component Hierarchy
 
 <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="MISSING" alt="Logo">
   </a>
 
 ## API
@@ -131,7 +131,7 @@ After the Flixador MVP, we will explore adding the following features:
 
 ## Built With
 
-This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux, CSS, and Material UI on the frontend. Dependencies needed for the project are redux, react-redux, redux-thunk, redux-devtools-extension/developmentOnly. 
+This project was conceptualized by building wireframes and prototypes using Figma and Adobe Photoshop We will build this project using React JS, JavaScript, React Redux, CSS, and Material UI on the frontend. Dependencies needed for the project are axios, redux, react-redux, redux-thunk, redux-devtools-extension/developmentOnly. 
 
 
 - [JavaScript](https://javascript.com)
