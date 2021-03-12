@@ -5,7 +5,6 @@ import "./Banar.css";
 const Banar = () => {
   const [banar, setBanar] = useState([]);
   const handelBaner = async () => {
-    let API_KEY = "db4b083428c5e3032dba92c507c8e1cc";
     const response = await axios.get(
       `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&with_networks=213`
     );
