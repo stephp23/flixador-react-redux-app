@@ -3,10 +3,13 @@ import "../App.css";
 import Nav from "../components/Nav/Nav";
 import "./Movies.css";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
 const Movies = () => {
+  const { movies } = useSelector((state) => state.movies);
+  const text = useSelector((state) => state.movies.text);
   const [moviesPagesRow1, setMoviesPagesRow1] = useState([]);
   const [moviesPagesRow2, setMoviesPagesRow2] = useState([]);
   const [moviesPagesRow3, setMoviesPagesRow3] = useState([]);
@@ -64,6 +67,26 @@ const Movies = () => {
         <Nav />
       </div>
       <div className="row-movie">
+        {movies ? (
+          <div className="row">
+            <h2>{text ? `what you looking for : ${text}` : ""}</h2>
+            <div className="row_posters">
+              {movies.map((actionMovie) => {
+                return (
+                  <img
+                    onClick={() => setGetMovieId(actionMovie.id)}
+                    key={actionMovie.id}
+                    className="row_poster"
+                    src={`${imgUrl}${actionMovie.poster_path}`}
+                    alt={actionMovie.name}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
         <div className="row_posters-movie">
           {moviesPagesRow1.map((moviesPage) => {
             return (
