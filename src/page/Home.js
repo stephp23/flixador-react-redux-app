@@ -5,6 +5,7 @@ import ActionAdventure from "../components/ActionAdventure/ActionAdventure";
 import ScifiHorror from "../components/ScifiHorror/ScifiHorror";
 import Footer from "../components/Footer/Footer";
 import Banar from "../components/Banar/Banar";
+import ChildrenFamily from "../components/ChildrenFamily/ChildrenFamily";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <NewReleases />
       <ActionAdventure />
       <ScifiHorror />
+      <ChildrenFamily />
       <Footer />
     </div>
   );
