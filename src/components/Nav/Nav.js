@@ -8,19 +8,22 @@ import Search from "./Search/Search";
 const Nav = () => {
   const [show, setShow] = useState(false);
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScrolling = window.addEventListener("scroll", () => {
       window.scrollY > 100 ? setShow(true) : setShow(false);
     });
+
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", handleScrolling);
     };
   }, []);
   return (
     <div className={`nav ${show && "nav__black"}`}>
       <div className="div-header">
-        <div className="div-logo">
-          <img className="nav__logo" src={logo} alt="Flixador" />
-        </div>
+        <Link to="/">
+          <div className="div-logo">
+            <img className="nav__logo" src={logo} alt="Flixador" />
+          </div>
+        </Link>
         <div className="div-search">
           <Search />
         </div>
