@@ -39,7 +39,7 @@ const Home = ({ setGetMovieId }) => {
 
       <NewReleases />
       <ActionAdventure setGetMovieId={setGetMovieId} />
-      <ScifiHorror />
+      <ScifiHorror setGetMovieId={setGetMovieId} />
       <ChildrenFamily setGetMovieId={setGetMovieId} />
       <Footer />
     </div>
