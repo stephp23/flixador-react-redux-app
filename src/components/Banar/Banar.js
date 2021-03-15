@@ -35,7 +35,7 @@ const Banar = () => {
     if (banartrailerUrl) {
       setBanarTrailerUrl("");
     } else {
-      movieTrailer(banar?.name || banar?.name || banar?.orignal_name || "")
+      movieTrailer(banar?.name || banar?.title || banar?.orignal_name || "")
         .then((url) => {
           const urlParams = new URLSearchParams(new URL(url).search);
           setBanarTrailerUrl(urlParams.get("v"));
