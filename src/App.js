@@ -26,10 +26,12 @@ function App() {
         <Route exact path="/">
           <Home setGetMovieId={setGetMovieId} />
         </Route>
-        <Route path="/movies" component={Movies} />
+        <Route exact path="/movies">
+          <Movies setGetMovieId={setGetMovieId} />
+        </Route>
         <Route path="/tvshows" component={TvShows} />
         <Route path="/team" component={Team} />
-        <Route path="/movie/:title" component={FullMovie} />
+        <Route exact path="/movie/:title" component={FullMovie} />
       </Switch>
     </div>
   );
