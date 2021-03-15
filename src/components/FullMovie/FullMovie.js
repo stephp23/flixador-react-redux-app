@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Typography from "@material-ui/core/Typography";
 import "./FullMovie.css";
+import YouTube from "react-youtube";
+import movieTrailer from "movie-trailer";
 
 const FullMovie = ({ movieId }) => {
   const [fullMoviebanar, setFullMoviebanar] = useState([]);
@@ -50,8 +53,18 @@ const FullMovie = ({ movieId }) => {
         </header>
       </>
       <div className="full-movie-dea">
-        <h3> Movie Title : {fullMoviebanar.original_title}</h3>
-        <h3>release Date :{fullMoviebanar.release_date}</h3>
+        <Typography variant="h3">{fullMoviebanar.original_title}</Typography>
+        <div className="date-runtime">
+          <Typography variant="h5">{fullMoviebanar.release_date}</Typography>
+        </div>
+        <div className="date-runtime">
+          <Typography variant="h5">
+            Run Time : {fullMoviebanar.runtime} min
+          </Typography>
+        </div>
+      </div>
+      <div className="full-movie-det">
+        <Typography variant="h6">{fullMoviebanar.overview}</Typography>
       </div>
     </div>
   );
