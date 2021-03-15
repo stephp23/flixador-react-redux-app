@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./NewReleases.css";
+import { Link } from "react-router-dom";
 
-///console.log(process.env.REACT_APP_APIKEY);
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const NewReleases = () => {
+const NewReleases = ({ setGetMovieId }) => {
   const [newRelease, setNewRelease] = useState([]);
-  const [getMovieId, setGetMovieId] = useState(0);
   const fetchNewRelease = async () => {
     let URL = `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_APIKEY}&language=en-US`;
     let response = await axios.get(URL);
@@ -16,20 +15,27 @@ const NewReleases = () => {
     fetchNewRelease();
   }, []);
 
-  console.log(getMovieId);
   return (
-    <div className="row">
+    <div className="row1">
       <h2>New Releases</h2>
-      <div className="row_posters">
+      <div className="row_posters1">
         {newRelease.map((moviesNewReleses) => {
           return (
-            <img
-              onClick={() => setGetMovieId(moviesNewReleses.id)}
-              key={moviesNewReleses.id}
-              className="row_poster"
-              src={`${imgUrl}${moviesNewReleses.poster_path}`}
-              alt={moviesNewReleses.name}
-            />
+            <Link
+              to={`/movie/${
+                moviesNewReleses?.title ||
+                moviesNewReleses?.name ||
+                moviesNewReleses?.orignal_name
+              }`}
+            >
+              <img
+                onClick={() => setGetMovieId(moviesNewReleses.id)}
+                key={moviesNewReleses.id}
+                className="row_poster1"
+                src={`${imgUrl}${moviesNewReleses.poster_path}`}
+                alt={moviesNewReleses.name}
+              />
+            </Link>
           );
         })}
       </div>
