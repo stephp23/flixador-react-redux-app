@@ -2,21 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ActionAdventure.css";
 import { Link } from "react-router-dom";
-import { useParams, useHistory } from "react-router-dom";
-import { use } from "react-router-dom";
-
 const imgUrl = "https://image.tmdb.org/t/p/original";
-
 const ActionAdventure = ({ setGetMovieId }) => {
-  const history = useHistory();
   const [actionAdventureMovies, setActionAdventureMovies] = useState([]);
-
   const fetchActionAdventure = async () => {
     let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_APIKEY}&with_genres=28`;
     let response = await axios.get(URL);
     setActionAdventureMovies(response.data.results);
   };
-
   useEffect(() => {
     fetchActionAdventure();
   }, []);
@@ -24,8 +17,6 @@ const ActionAdventure = ({ setGetMovieId }) => {
   return (
     <div className="row1">
       <h2>Action Adventure</h2>
-      {/* <div className="row_posters1"> */}
-
       <div className="row_posters1">
         {actionAdventureMovies.map((moviesActionAdven, index) => {
           return (
@@ -52,14 +43,3 @@ const ActionAdventure = ({ setGetMovieId }) => {
 };
 
 export default ActionAdventure;
-
-{
-  /* <Link
-              to={`/movie/${
-                moviesActionAdven?.title ||
-                moviesActionAdven.name ||
-                moviesActionAdven?.orignal_name
-              }
-                `}
-            > */
-}
