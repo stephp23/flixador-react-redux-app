@@ -7,29 +7,37 @@ import Footer from "../components/Footer/Footer";
 import Banar from "../components/Banar/Banar";
 import ChildrenFamily from "../components/ChildrenFamily/ChildrenFamily";
 import { useSelector } from "react-redux";
-import Nav from "../components/Nav/Nav";
+import { Link } from "react-router-dom";
+
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const Home = () => {
+const Home = ({ setGetMovieId }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
-  const [getMovieId, setGetMovieId] = useState(0);
+
   return (
     <div className="app">
-      <Nav />
       <Banar />
       {movies ? (
-        <div className="row">
+        <div className="row1">
           <h2>{text ? `what you looking for : ${text}` : ""}</h2>
-          <div className="row_posters">
+          <div className="row_posters1">
             {movies.map((actionMovie) => {
               return (
-                <img
-                  onClick={() => setGetMovieId(actionMovie.id)}
-                  key={actionMovie.id}
-                  className="row_poster"
-                  src={`${imgUrl}${actionMovie.poster_path}`}
-                  alt={actionMovie.name}
-                />
+                <Link
+                  to={`/movie/${
+                    actionMovie?.title ||
+                    actionMovie?.name ||
+                    actionMovie?.orignal_name
+                  }`}
+                >
+                  <img
+                    onClick={() => setGetMovieId(actionMovie.id)}
+                    key={actionMovie.id}
+                    className="row_poster1"
+                    src={`${imgUrl}${actionMovie.poster_path}`}
+                    alt={actionMovie.name}
+                  />
+                </Link>
               );
             })}
           </div>
@@ -38,10 +46,10 @@ const Home = () => {
         ""
       )}
 
-      <NewReleases />
-      <ActionAdventure />
-      <ScifiHorror />
-      <ChildrenFamily />
+      <NewReleases setGetMovieId={setGetMovieId} />
+      <ActionAdventure setGetMovieId={setGetMovieId} />
+      <ScifiHorror setGetMovieId={setGetMovieId} />
+      <ChildrenFamily setGetMovieId={setGetMovieId} />
       <Footer />
     </div>
   );
