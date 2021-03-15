@@ -9,6 +9,7 @@ import ChildrenFamily from "../components/ChildrenFamily/ChildrenFamily";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Switch from "@material-ui/core/Switch";
+import Comedies from "../components/Comedy/Comedy";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const Home = ({ setGetMovieId, light, handleDarkLight }) => {
@@ -58,6 +59,7 @@ const Home = ({ setGetMovieId, light, handleDarkLight }) => {
 
       <NewReleases setGetMovieId={setGetMovieId} />
       <ActionAdventure setGetMovieId={setGetMovieId} />
+      <Comedies setGetMovieId={setGetMovieId} />
       <ScifiHorror setGetMovieId={setGetMovieId} />
       <ChildrenFamily setGetMovieId={setGetMovieId} />
       <Footer />
