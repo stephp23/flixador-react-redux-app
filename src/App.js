@@ -10,15 +10,6 @@ import Nav from "./components/Nav/Nav";
 
 function App() {
   const [getMovieId, setGetMovieId] = useState(0);
-
-  // const handleLink = () => {
-  //   getMovieId < 0 ? <Link to={`/movie/${getMovieId}`} /> : <Link to="/" />;
-  // };
-  // useEffect(() => {
-  //   handleLink();
-  // }, []);
-
-  console.log(getMovieId);
   return (
     <div className="App">
       <Nav />
@@ -31,7 +22,9 @@ function App() {
         </Route>
         <Route path="/tvshows" component={TvShows} />
         <Route path="/team" component={Team} />
-        <Route exact path="/movie/:title" component={FullMovie} />
+        <Route exact path="/movie/:title">
+          <FullMovie movieId={getMovieId} />
+        </Route>
       </Switch>
     </div>
   );
