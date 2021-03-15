@@ -1,11 +1,17 @@
 .full-movie-dea{
    background-color:#111; 
    color: white;
-   margin: 20px;
+   margin: 30px;
+   margin-top: 40;
+   padding: 10px;
    
   
 }
-.full-movie-date{
+.full-movie-det{
     color: white;
-    margin: 30px;  
+     margin: 30px; 
+     height: 500px;  
+}
+.date-runtime{
+    margin-top: 10px;
 }
