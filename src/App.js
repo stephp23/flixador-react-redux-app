@@ -10,6 +10,7 @@ import Nav from "./components/Nav/Nav";
 
 function App() {
   const [getMovieId, setGetMovieId] = useState(0);
+  console.log(getMovieId);
   return (
     <div className="App">
       <Nav />
