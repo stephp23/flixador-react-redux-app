@@ -10,13 +10,21 @@ import Nav from "./components/Nav/Nav";
 
 function App() {
   const [getMovieId, setGetMovieId] = useState(0);
-  console.log(getMovieId);
+  const [light, setLight] = useState({ checkedA: true });
+  const handleDarkLight = (event) => {
+    setLight({ ...light, [event.target.name]: event.target.checked });
+  };
+
   return (
     <div className="App">
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Home setGetMovieId={setGetMovieId} />
+          <Home
+            setGetMovieId={setGetMovieId}
+            handleDarkLight={handleDarkLight}
+            light={light}
+          />
         </Route>
         <Route exact path="/movies">
           <Movies setGetMovieId={setGetMovieId} />
