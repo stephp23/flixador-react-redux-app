@@ -16,7 +16,6 @@ const NewReleases = () => {
     fetchNewRelease();
   }, []);
 
-  console.log(getMovieId);
   return (
     <div className="row">
       <h2>New Releases</h2>

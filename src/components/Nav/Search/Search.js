@@ -10,8 +10,7 @@ const Search = ({ searchMovie, fetchMovies }) => {
 
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
-  console.log(text);
-  console.log(movies);
+
   const handleChange = (e) => {
     searchMovie(e.target.value);
   };

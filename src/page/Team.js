@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "../App.css";
+import Nav from "../components/Nav/Nav";
+import "./Movies.css";
 
 const Team = () => {
-  return <div></div>;
+  const [show, setShow] = useState(true);
+
+  useEffect(() => {
+    const handleScrolling = window.addEventListener("scroll", () => {
+      window.scrollY > -20 ? setShow(true) : setShow(false);
+    });
+    return () => {
+      window.removeEventListener("scroll", handleScrolling);
+    };
+  }, []);
+  return <div className={`nav ${show && "nav__black"}`}></div>;
 };
 
 export default Team;
