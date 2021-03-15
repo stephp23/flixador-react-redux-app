@@ -4,8 +4,13 @@ import Typography from "@material-ui/core/Typography";
 import "./FullMovie.css";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-const FullMovie = ({ movieId }) => {
+const imgUrl = "https://image.tmdb.org/t/p/original";
+const FullMovie = ({ movieId, setGetMovieId }) => {
+  const { movies } = useSelector((state) => state.movies);
+  const text = useSelector((state) => state.movies.text);
   const [fullMoviebanar, setFullMoviebanar] = useState([]);
   const [fulltrailerUrl, setfullTrailerUrl] = useState("");
   const FetchFullMovie = async () => {
@@ -76,6 +81,34 @@ const FullMovie = ({ movieId }) => {
           </div>
           <div className="banar-fadeBottom"></div>
         </header>
+        {movies ? (
+          <div className="row1">
+            <h2>{text ? `what you looking for : ${text}` : ""}</h2>
+            <div className="row_posters1">
+              {movies.map((actionMovie) => {
+                return (
+                  <Link
+                    to={`/movie/${
+                      actionMovie?.title ||
+                      actionMovie?.name ||
+                      actionMovie?.orignal_name
+                    }`}
+                  >
+                    <img
+                      onClick={() => setGetMovieId(actionMovie.id)}
+                      key={actionMovie.id}
+                      className="row_poster1"
+                      src={`${imgUrl}${actionMovie.poster_path}`}
+                      alt={actionMovie.name}
+                    />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
         {fulltrailerUrl && <YouTube videoId={fulltrailerUrl} opts={opts} />}
       </>
       <div className="full-movie-dea">
