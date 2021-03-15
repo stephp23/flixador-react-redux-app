@@ -29,11 +29,11 @@ const Nav = () => {
         </div>
         <div className="div-link">
           <h4 className="router-headr">
-            <Link to="/movies">movies</Link>
+            <Link to="/movies">Movies</Link>
           </h4>
           <h4 className="router-headr">
             {" "}
-            <Link to="/tvshows">Tv Showes</Link>
+            <Link to="/tvshows">Tv Shows</Link>
           </h4>
           <h4 className="router-headr">
             <Link to="/team">Team</Link>
