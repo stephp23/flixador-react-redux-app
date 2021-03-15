@@ -3,11 +3,12 @@ import "../App.css";
 import Nav from "../components/Nav/Nav";
 import "./Movies.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
-const Movies = () => {
+const Movies = ({ setGetMovieId }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
   const [moviesPagesRow1, setMoviesPagesRow1] = useState([]);
@@ -15,11 +16,7 @@ const Movies = () => {
   const [moviesPagesRow3, setMoviesPagesRow3] = useState([]);
   const [moviesPagesRow4, setMoviesPagesRow4] = useState([]);
   const [moviesPagesRow5, setMoviesPagesRow5] = useState([]);
-
   const [show, setShow] = useState(true);
-  const [getMovieId, setGetMovieId] = useState(0);
-  console.log(moviesPagesRow2);
-
   const fetchMoviesPageRow1 = async () => {
     let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_APIKEY}&with_genres=28`;
     const response = await axios.get(URL);
@@ -68,18 +65,28 @@ const Movies = () => {
       </div>
       <div className="row-movie">
         {movies ? (
-          <div className="row">
-            <h2>{text ? `what you looking for : ${text}` : ""}</h2>
-            <div className="row_posters">
+          <div className="row2">
+            <h2 className="text-search-movie">
+              {text ? `what you looking for : ${text}` : ""}
+            </h2>
+            <div className="row_posters2">
               {movies.map((actionMovie) => {
                 return (
-                  <img
-                    onClick={() => setGetMovieId(actionMovie.id)}
-                    key={actionMovie.id}
-                    className="row_poster"
-                    src={`${imgUrl}${actionMovie.poster_path}`}
-                    alt={actionMovie.name}
-                  />
+                  <Link
+                    to={`/movie/${
+                      actionMovie?.title ||
+                      actionMovie?.name ||
+                      actionMovie?.orignal_name
+                    }`}
+                  >
+                    <img
+                      onClick={() => setGetMovieId(actionMovie.id)}
+                      key={actionMovie.id}
+                      className="row_poster2"
+                      src={`${imgUrl}${actionMovie.poster_path}`}
+                      alt={actionMovie.name}
+                    />
+                  </Link>
                 );
               })}
             </div>
@@ -87,68 +94,101 @@ const Movies = () => {
         ) : (
           ""
         )}
-        <div className="row_posters-movie">
+        <div className="row_posters2">
           {moviesPagesRow1.map((moviesPage) => {
             return (
-              <img
-                onClick={() => setGetMovieId(moviesPage.id)}
-                key={moviesPage.id}
-                className="row_poster"
-                src={`${imgUrl}${moviesPage.poster_path}`}
-                alt={moviesPage.name}
-              />
+              <Link
+                to={`/movie/${
+                  moviesPage?.title ||
+                  moviesPage?.name ||
+                  moviesPage?.orignal_name
+                }`}
+              >
+                <img
+                  onClick={() => setGetMovieId(moviesPage.id)}
+                  key={moviesPage.id}
+                  className="row_poster2"
+                  src={`${imgUrl}${moviesPage.poster_path}`}
+                  alt={moviesPage.name}
+                />
+              </Link>
             );
           })}
         </div>
-        <div className="row_posters-movie">
+        <div className="row_posters2">
           {moviesPagesRow2.map((moviesPage1) => {
             return (
-              <img
-                onClick={() => setGetMovieId(moviesPage1.id)}
-                key={moviesPage1.id}
-                className="row_poster"
-                src={`${imgUrl}${moviesPage1.poster_path}`}
-                alt={moviesPage1.name}
-              />
+              <Link to={`/movie/${moviesPage1?.orignal_name}`}>
+                <img
+                  onClick={() => setGetMovieId(moviesPage1.id)}
+                  key={moviesPage1.id}
+                  className="row_poster2"
+                  src={`${imgUrl}${moviesPage1.poster_path}`}
+                  alt={moviesPage1.name}
+                />
+              </Link>
             );
           })}
         </div>
-        <div className="row_posters-movie">
+        <div className="row_posters2">
           {moviesPagesRow3.map((moviesPage2) => {
             return (
-              <img
-                onClick={() => setGetMovieId(moviesPage2.id)}
-                key={moviesPage2.id}
-                className="row_poster"
-                src={`${imgUrl}${moviesPage2.poster_path}`}
-                alt={moviesPage2.name}
-              />
+              <Link
+                to={`/movie/${
+                  moviesPage2?.title ||
+                  moviesPage2?.name ||
+                  moviesPage2?.orignal_name
+                }`}
+              >
+                <img
+                  onClick={() => setGetMovieId(moviesPage2.id)}
+                  key={moviesPage2.id}
+                  className="row_poster2"
+                  src={`${imgUrl}${moviesPage2.poster_path}`}
+                  alt={moviesPage2.name}
+                />
+              </Link>
             );
           })}
         </div>
-        <div className="row_posters-movie">
+        <div className="row_posters2">
           {moviesPagesRow4.map((moviesPage3) => {
             return (
-              <img
-                onClick={() => setGetMovieId(moviesPage3.id)}
-                key={moviesPage3.id}
-                className="row_poster"
-                src={`${imgUrl}${moviesPage3.poster_path}`}
-                alt={moviesPage3.name}
-              />
+              <Link
+                to={`/movie/${
+                  moviesPage3?.title ||
+                  moviesPage3?.name ||
+                  moviesPage3?.orignal_name
+                }`}
+              >
+                <img
+                  onClick={() => setGetMovieId(moviesPage3.id)}
+                  key={moviesPage3.id}
+                  className="row_poster2"
+                  src={`${imgUrl}${moviesPage3.poster_path}`}
+                  alt={moviesPage3.name}
+                />
+              </Link>
             );
           })}
         </div>
-        <div className="row_posters-movie">
+        <div className="row_posters2">
           {moviesPagesRow5.map((moviesPage4) => {
             return (
-              <img
-                onClick={() => setGetMovieId(moviesPage4.id)}
-                key={moviesPage4.id}
-                className="row_poster"
-                src={`${imgUrl}${moviesPage4.poster_path}`}
-                alt={moviesPage4.name}
-              />
+              <Link
+                to={`/movie/${
+                  (moviesPage4?.title && moviesPage4?.name) ||
+                  moviesPage4?.orignal_name
+                }`}
+              >
+                <img
+                  onClick={() => setGetMovieId(moviesPage4.id)}
+                  key={moviesPage4.id}
+                  className="row_poster2"
+                  src={`${imgUrl}${moviesPage4.poster_path}`}
+                  alt={moviesPage4.name}
+                />
+              </Link>
             );
           })}
         </div>
