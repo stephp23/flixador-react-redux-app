@@ -37,7 +37,7 @@ const Home = ({ setGetMovieId }) => {
         ""
       )}
 
-      <NewReleases />
+      <NewReleases setGetMovieId={setGetMovieId} />
       <ActionAdventure setGetMovieId={setGetMovieId} />
       <ScifiHorror setGetMovieId={setGetMovieId} />
       <ChildrenFamily setGetMovieId={setGetMovieId} />
