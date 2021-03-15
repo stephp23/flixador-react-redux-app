@@ -13,14 +13,25 @@ const FullMovie = ({ movieId, setGetMovieId }) => {
   const text = useSelector((state) => state.movies.text);
   const [fullMoviebanar, setFullMoviebanar] = useState([]);
   const [fulltrailerUrl, setfullTrailerUrl] = useState("");
-  const FetchFullMovie = async () => {
+  const [similarMovie, SetsimilarMovie] = useState([]);
+  const fetchFullMovie = async () => {
     let URL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_APIKEY}`;
     const response = await axios.get(URL);
     setFullMoviebanar(response.data);
   };
-  console.log(fullMoviebanar);
+
+  const fetchSimilarMovie = async () => {
+    let urlSimilar = `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&page=1`;
+    const response = await axios.get(urlSimilar);
+    SetsimilarMovie(response.data.results);
+  };
+
+  ////https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=<<api_key>>&language=en-US&page=1
   useEffect(() => {
-    FetchFullMovie();
+    fetchSimilarMovie();
+  }, [fullMoviebanar]);
+  useEffect(() => {
+    fetchFullMovie();
   }, [fullMoviebanar]);
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -124,6 +135,28 @@ const FullMovie = ({ movieId, setGetMovieId }) => {
       </div>
       <div className="full-movie-det">
         <Typography variant="h6">{fullMoviebanar.overview}</Typography>
+      </div>
+      <div className="row1">
+        <h2>Similar Movies</h2>
+        <div className="row_posters1">
+          {similarMovie.map((similar, index) => {
+            return (
+              <Link
+                to={`/movie/${
+                  similar?.title || similar?.name || similar?.orignal_name
+                }`}
+              >
+                <img
+                  onClick={() => setGetMovieId(similar.id)}
+                  key={index}
+                  className="row_poster1"
+                  src={`${imgUrl}${similar.poster_path}`}
+                  alt={similar.name}
+                />
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
