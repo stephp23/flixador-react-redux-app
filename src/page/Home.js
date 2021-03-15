@@ -7,6 +7,7 @@ import Footer from "../components/Footer/Footer";
 import Banar from "../components/Banar/Banar";
 import ChildrenFamily from "../components/ChildrenFamily/ChildrenFamily";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const Home = ({ setGetMovieId }) => {
@@ -17,18 +18,26 @@ const Home = ({ setGetMovieId }) => {
     <div className="app">
       <Banar />
       {movies ? (
-        <div className="row">
+        <div className="row1">
           <h2>{text ? `what you looking for : ${text}` : ""}</h2>
-          <div className="row_posters">
+          <div className="row_posters1">
             {movies.map((actionMovie) => {
               return (
-                <img
-                  onClick={() => setGetMovieId(actionMovie.id)}
-                  key={actionMovie.id}
-                  className="row_poster"
-                  src={`${imgUrl}${actionMovie.poster_path}`}
-                  alt={actionMovie.name}
-                />
+                <Link
+                  to={`/movie/${
+                    actionMovie?.title ||
+                    actionMovie?.name ||
+                    actionMovie?.orignal_name
+                  }`}
+                >
+                  <img
+                    onClick={() => setGetMovieId(actionMovie.id)}
+                    key={actionMovie.id}
+                    className="row_poster1"
+                    src={`${imgUrl}${actionMovie.poster_path}`}
+                    alt={actionMovie.name}
+                  />
+                </Link>
               );
             })}
           </div>
