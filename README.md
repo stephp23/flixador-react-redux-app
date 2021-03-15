@@ -100,7 +100,7 @@ Flixador is a movie searching app for those that want to keep up with the latest
 
 ## API
 
-We are using the [OMDb (Open Movie Database) API](https://www.omdbapi.com/) which gives the following information:
+We are using the [themoviedbAPI](https://www.themoviedb.org/documentation/api) which gives the following information:
 
 - Categories include movies, series, or episodes
 - Access to valid IMDb ID numbers for movies and shows
