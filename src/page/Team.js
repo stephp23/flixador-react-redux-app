@@ -14,7 +14,13 @@ const Team = () => {
       window.removeEventListener("scroll", handleScrolling);
     };
   }, []);
-  return <div className={`nav ${show && "nav__black"}`}></div>;
+  return (
+    <div className="app">
+      <div className={`nav ${show && "nav__black"}`}>
+        <Nav />
+      </div>
+    </div>
+  );
 };
 
 export default Team;
