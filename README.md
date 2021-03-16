@@ -145,7 +145,7 @@ This project was conceptualized by building wireframes and prototypes using Figm
 
 - [JavaScript](https://javascript.com)
 - [ReactJS](https://reactjs.org)
-- [OMDb API](https://www.omdbapi.com/)
+- [themoviedbAPI](https://www.themoviedb.org/documentation/api)
 - [Material UI](https://material-ui.com/)
 
 <!-- ACKNOWLEDGEMENTS -->
@@ -156,7 +156,6 @@ This project was conceptualized by building wireframes and prototypes using Figm
 - [Adobe Photoshop](https://www.adobe.com/products/photoshop.html)
 - [Img Shields](https://shields.io)
 - [FontAwesome](https://fontawesome.com/)
-- [Trello](https://www.trello.com/)
 
 <!-- CONTACT -->
 
