@@ -35,3 +35,8 @@
   .row_poster2:hover {
     transform: scale(1.08);
   }
+
+  .imageTeammate {
+    height: 400px;
+    width: 256.51px;
+  }
