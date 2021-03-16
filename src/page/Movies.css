@@ -51,6 +51,7 @@
   width: 256.51px;
   padding: 20px;
   border-radius: 40px;
+  transition: transform 450ms;
 }
 
 .teamDescription {

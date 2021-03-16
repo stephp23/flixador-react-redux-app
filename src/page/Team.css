@@ -2,3 +2,7 @@
   background-color: #111;
   color: aliceblue;
 }
+
+.imageTeammate:hover{
+  transform: scale(1.08);
+}
