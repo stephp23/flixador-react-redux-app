@@ -66,6 +66,14 @@
 
 ## Overview
 
+## How to Run
+
+1. Fork and clone the repo
+2. Must be using node v14 or higher
+3. Run `npm install`
+4. Run `npm start`
+5. Go to http://localhost:3000 to view the application
+
 ## Description
 
 Flixador is a movie searching app for those that want to keep up with the latest in movie releases. You can scroll through hundreds of movies and series titles right from the home screen. In the mood to only watch a series or only movies. You can also browse through hundreds of titles and their descriptions!
@@ -100,7 +108,7 @@ Flixador is a movie searching app for those that want to keep up with the latest
 
 ## API
 
-We are using the [OMDb (Open Movie Database) API](https://www.omdbapi.com/) which gives the following information:
+We are using the [themoviedbAPI](https://www.themoviedb.org/documentation/api) which gives the following information:
 
 - Categories include movies, series, or episodes
 - Access to valid IMDb ID numbers for movies and shows
@@ -157,6 +165,7 @@ This project was conceptualized by building wireframes and prototypes using Figm
 - Ayman Omer - [LinkedIn](https://www.linkedin.com/in/ayman-omer-b2429b1ab/)
 - Stephanie Pena - [LinkedIn](https://www.linkedin.com/in/stephanieapena/)
 - Katherine Fernandez - [LinkedIn](https://www.linkedin.com/in/katfernandez22/)
+- Leesel Fraser - [LinkedIn](https://www.linkedin.com/in/leesel/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
