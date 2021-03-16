@@ -57,14 +57,16 @@ const Home = ({ setGetMovieId, light, handleDarkLight }) => {
       ) : (
         ""
       )}
-
-      <NewReleases setGetMovieId={setGetMovieId} />
+     
+     
+      <NewReleases light={light} setGetMovieId={setGetMovieId} />
       <MostPopularMov setGetMovieId={setGetMovieId} />
-      <ActionAdventure setGetMovieId={setGetMovieId} />
+      <ActionAdventure light={light} setGetMovieId={setGetMovieId} />
       <Comedies setGetMovieId={setGetMovieId} />
-      <ScifiHorror setGetMovieId={setGetMovieId} />
-      <ChildrenFamily setGetMovieId={setGetMovieId} />
-      <Footer />
+      <ScifiHorror light={light} setGetMovieId={setGetMovieId} />
+      <ChildrenFamily light={light} setGetMovieId={setGetMovieId} />
+      <Footer light={light} />
+
     </div>
   );
 };
