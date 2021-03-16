@@ -8,18 +8,29 @@ import Banar from "../components/Banar/Banar";
 import ChildrenFamily from "../components/ChildrenFamily/ChildrenFamily";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Switch from "@material-ui/core/Switch";
+import Comedies from "../components/Comedy/Comedy";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const Home = ({ setGetMovieId }) => {
+const Home = ({ setGetMovieId, light, handleDarkLight }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
 
   return (
-    <div className="app">
+    <div className={light.checkedA ? "app" : "light-mood"}>
       <Banar />
+      <Switch
+        checked={light.checkedA}
+        onChange={handleDarkLight}
+        name="checkedA"
+        inputProps={{ "aria-label": "secondary checkbox" }}
+      />
+
       {movies ? (
         <div className="row1">
-          <h2>{text ? `what you looking for : ${text}` : ""}</h2>
+          <h2 className={light.checkedA ? "" : "text-light-mood"}>
+            {text ? `what you looking for : ${text}` : ""}
+          </h2>
           <div className="row_posters1">
             {movies.map((actionMovie) => {
               return (
@@ -48,6 +59,7 @@ const Home = ({ setGetMovieId }) => {
 
       <NewReleases setGetMovieId={setGetMovieId} />
       <ActionAdventure setGetMovieId={setGetMovieId} />
+      <Comedies setGetMovieId={setGetMovieId} />
       <ScifiHorror setGetMovieId={setGetMovieId} />
       <ChildrenFamily setGetMovieId={setGetMovieId} />
       <Footer />
