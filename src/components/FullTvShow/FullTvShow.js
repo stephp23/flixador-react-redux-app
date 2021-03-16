@@ -1,39 +1,39 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Typography from "@material-ui/core/Typography";
-import "./FullMovie.css";
+// import "./FullMovie.css";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const FullMovie = ({ movieId, setGetMovieId }) => {
+const FullTvShow = ({ setGetMovieId, getTvShowId, setGetTvShowId }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
-  const [fullMoviebanar, setFullMoviebanar] = useState([]);
+  const [fullTvShowBanar, setFullTvShowBanar] = useState([]);
+  const [similarTvShow, setSimilarTvShow] = useState([]);
   const [fulltrailerUrl, setfullTrailerUrl] = useState("");
-  const [similarMovie, SetsimilarMovie] = useState([]);
-  const fetchFullMovie = async () => {
-    let URL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_APIKEY}`;
+
+  const fetchFullTvShow = async () => {
+    let URL = `https://api.themoviedb.org/3/tv/${getTvShowId}?api_key=${process.env.REACT_APP_APIKEY}&language=en-US`;
     const response = await axios.get(URL);
-    setFullMoviebanar(response.data);
+    setFullTvShowBanar(response.data);
   };
 
-  const fetchSimilarMovie = async () => {
-    let urlSimilar = `https://api.themoviedb.org/3/movie/${movieId}/similar?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&page=1`;
+  const fetchSimilarTv = async () => {
+    let urlSimilar = `https://api.themoviedb.org/3/tv/${getTvShowId}/similar?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&page=1`;
     const response = await axios.get(urlSimilar);
-    SetsimilarMovie(response.data.results);
+    setSimilarTvShow(response.data.results);
   };
 
-  ////https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=<<api_key>>&language=en-US&page=1
+  useEffect(() => {
+    fetchSimilarTv();
+  }, [fullTvShowBanar]);
 
   useEffect(() => {
-    fetchSimilarMovie();
-  }, [fullMoviebanar]);
-  useEffect(() => {
-    fetchFullMovie();
-  }, [fullMoviebanar]);
+    fetchFullTvShow();
+  }, [fullTvShowBanar]);
 
   const truncate = (str, n) => {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
@@ -45,14 +45,14 @@ const FullMovie = ({ movieId, setGetMovieId }) => {
       autoplay: 1,
     },
   };
-  const handleClickMovie = (fullMoviebanar) => {
+  const handleClickMovie = (fullTvShowBanar) => {
     if (fulltrailerUrl) {
       setfullTrailerUrl("");
     } else {
       movieTrailer(
-        fullMoviebanar?.name ||
-          fullMoviebanar?.title ||
-          fullMoviebanar?.orignal_name ||
+        fullTvShowBanar?.name ||
+          fullTvShowBanar?.title ||
+          fullTvShowBanar?.orignal_name ||
           ""
       )
         .then((url) => {
@@ -70,26 +70,26 @@ const FullMovie = ({ movieId, setGetMovieId }) => {
           className="banar"
           style={{
             backgroundSize: "cover",
-            backgroundImage: `url("https://image.tmdb.org/t/p/original${fullMoviebanar?.backdrop_path}")`,
+            backgroundImage: `url("https://image.tmdb.org/t/p/original${fullTvShowBanar?.backdrop_path}")`,
             backgroundPosition: "center center",
           }}
         >
           <div className="banar-info">
             <h1 className="banar-title">
-              {fullMoviebanar?.title ||
-                fullMoviebanar?.name ||
-                fullMoviebanar?.orignal_name}
+              {fullTvShowBanar?.title ||
+                fullTvShowBanar?.name ||
+                fullTvShowBanar?.orignal_name}
             </h1>
             <div className="banar-buttons">
               <button
                 className="banar-button"
-                onClick={() => handleClickMovie(fullMoviebanar)}
+                onClick={() => handleClickMovie(fullTvShowBanar)}
               >
                 Play
               </button>
             </div>
             <h1 className="banar-description">
-              {truncate(fullMoviebanar?.overview, 150)}
+              {truncate(fullTvShowBanar?.overview, 150)}
             </h1>
           </div>
           <div className="banar-fadeBottom"></div>
@@ -125,31 +125,31 @@ const FullMovie = ({ movieId, setGetMovieId }) => {
         {fulltrailerUrl && <YouTube videoId={fulltrailerUrl} opts={opts} />}
       </>
       <div className="full-movie-dea">
-        <Typography variant="h3">{fullMoviebanar.original_title}</Typography>
+        <Typography variant="h3">{fullTvShowBanar.original_title}</Typography>
         <div className="date-runtime">
-          <Typography variant="h5">{fullMoviebanar.release_date}</Typography>
+          <Typography variant="h5">{fullTvShowBanar.release_date}</Typography>
         </div>
         <div className="date-runtime">
           <Typography variant="h5">
-            Run Time : {fullMoviebanar.runtime} min
+            Run Time : {fullTvShowBanar.runtime} min
           </Typography>
         </div>
       </div>
       <div className="full-movie-det">
-        <Typography variant="h6">{fullMoviebanar.overview}</Typography>
+        <Typography variant="h6">{fullTvShowBanar.overview}</Typography>
       </div>
       <div className="row1">
-        <h2>Similar Movies</h2>
+        <h2>Similar TV Shows</h2>
         <div className="row_posters1">
-          {similarMovie.map((similar, index) => {
+          {similarTvShow.map((similar, index) => {
             return (
               <Link
-                to={`/movie/${
+                to={`/tvshow/${
                   similar?.title || similar?.name || similar?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetMovieId(similar.id)}
+                  onClick={() => setGetTvShowId(similar.id)}
                   key={index}
                   className="row_poster1"
                   src={`${imgUrl}${similar.poster_path}`}
@@ -164,4 +164,4 @@ const FullMovie = ({ movieId, setGetMovieId }) => {
   );
 };
 
-export default FullMovie;
+export default FullTvShow;

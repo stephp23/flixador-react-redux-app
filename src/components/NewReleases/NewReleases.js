@@ -4,7 +4,7 @@ import "./NewReleases.css";
 import { Link } from "react-router-dom";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const NewReleases = ({ setGetMovieId }) => {
+const NewReleases = ({ setGetMovieId, light }) => {
   const [newRelease, setNewRelease] = useState([]);
   const fetchNewRelease = async () => {
     let URL = `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_APIKEY}&language=en-US`;
@@ -17,7 +17,7 @@ const NewReleases = ({ setGetMovieId }) => {
 
   return (
     <div className="row1">
-      <h2>New Releases</h2>
+      <h2 className={light.checkedA ? "" : "text-light-mood"}>New Releases</h2>
       <div className="row_posters1">
         {newRelease.map((moviesNewReleses) => {
           return (

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./ScifiHorror.css";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const ScifiHorror = ({ setGetMovieId }) => {
+const ScifiHorror = ({ setGetMovieId, light }) => {
   const [horror, setHorror] = useState([]);
   const fetchScifiHorror = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&with_networks=213`;
@@ -16,7 +16,9 @@ const ScifiHorror = ({ setGetMovieId }) => {
   }, []);
   return (
     <div className="row1">
-      <h2>Scifi & Horrors</h2>
+      <h2 className={light.checkedA ? "" : "text-light-mood"}>
+        Scifi & Horrors
+      </h2>
       <div className="row_posters1">
         {horror.map((horrorMovies) => {
           return (
