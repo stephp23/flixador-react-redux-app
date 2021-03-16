@@ -20,7 +20,7 @@ const ActionAdventure = ({ setGetMovieId, light }) => {
         Action Adventure
       </h2>
       <div className="row_posters1">
-        {actionAdventureMovies.map((moviesActionAdven, index) => {
+        {actionAdventureMovies.map((moviesActionAdven) => {
           return (
             <Link
               to={`/movie/${
@@ -31,7 +31,7 @@ const ActionAdventure = ({ setGetMovieId, light }) => {
             >
               <img
                 onClick={() => setGetMovieId(moviesActionAdven.id)}
-                key={index}
+                key={moviesActionAdven.id}
                 className="row_poster1"
                 src={`${imgUrl}${moviesActionAdven.poster_path}`}
                 alt={moviesActionAdven.name}
