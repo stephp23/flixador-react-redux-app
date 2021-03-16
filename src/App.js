@@ -6,10 +6,12 @@ import Movies from "./page/Movies";
 import TvShows from "./page/TvShows";
 import Team from "./page/Team";
 import FullMovie from "./components/FullMovie/FullMovie";
+import FullTvShow from "./components/FullTvShow/FullTvShow";
 import Nav from "./components/Nav/Nav";
 
 function App() {
   const [getMovieId, setGetMovieId] = useState(0);
+  const [getTvShowId, setGetTvShowId] = useState(0);
   const [light, setLight] = useState({ checkedA: true });
   const handleDarkLight = (event) => {
     setLight({ ...light, [event.target.name]: event.target.checked });
@@ -33,7 +35,9 @@ function App() {
             light={light}
           />
         </Route>
-        <Route path="/tvshows"><TvShows setGetMovieId={setGetMovieId}/></Route>
+        <Route path="/tvshows">
+          <TvShows setGetTvShowId={setGetTvShowId} />
+        </Route>
         <Route path="/team" component={Team} />
         <Route exact path="/movie/:title">
           <FullMovie
@@ -41,6 +45,15 @@ function App() {
             setGetMovieId={setGetMovieId}
             handleDarkLight={handleDarkLight}
             light={light}
+          />
+        </Route>
+        <Route exact path="/tvshow/:title">
+          <FullTvShow
+            getTvShowId={getTvShowId}
+            setGetMovieId={setGetMovieId}
+            handleDarkLight={handleDarkLight}
+            light={light}
+            setGetTvShowId={setGetTvShowId}
           />
         </Route>
       </Switch>
