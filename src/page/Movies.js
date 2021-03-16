@@ -5,7 +5,6 @@ import "./Movies.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Footer from "../components/Footer/Footer";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
@@ -194,7 +193,6 @@ const Movies = ({ setGetMovieId, light }) => {
           })}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
