@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../App.css";
 import Nav from "../components/Nav/Nav";
 import "./Movies.css";
+import "../page/Team.css"
 import Stephanie from "./teamImages/stephanie.png";
 import Ayman from "./teamImages/ayman.png";
 import Katherine from "./teamImages/katherine.png";
@@ -53,12 +54,12 @@ const Team = () => {
         <div className="teamdiv">
           {teamMember.map((item, index) => {
             return <div key={index}>
-              <a href={item.linkedin} target="_blank"><img className="imageTeammate card centered" src={item.teamImage} alt={item.firstName} /></a>
+              <a href={item.linkedin} target="_blank"><img className="imageTeammate" src={item.teamImage} alt={item.firstName} /></a>
               <h2 className="teamDescription">{item.firstName} {item.lastName}</h2>
               <h3 className="teamDescription">{item.teamTitle}</h3>
             </div>
           })}
-        </div>
+          </div>
       </div>
       <Footer />
     </div>
