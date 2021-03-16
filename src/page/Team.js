@@ -16,24 +16,23 @@ const Team = () => {
     lastName: "Pena",
     teamTitle: "Front-End Web Developer",
     teamImage: Stephanie
-  }, {
+    }, {
     firstName: "Ayman",
     lastName: "Omer",
     teamTitle: "Full-Stack Web Developer",
     teamImage: Ayman
     }, {
-      firstName: "Katherine",
-      lastName: "Fernandez",
-      teamTitle: "Product Designer",
-      teamImage: Katherine
+    firstName: "Katherine",
+    lastName: "Fernandez",
+    teamTitle: "Product Designer",
+    teamImage: Katherine
     }, {
-      firstName: "Leesel",
-      lastName: "Fraser",
-      teamTitle: "Web Developer",
-      teamImage: Leesel
-    },
-    
-  ]
+    firstName: "Leesel",
+    lastName: "Fraser",
+    teamTitle: "Web Developer",
+    teamImage: Leesel
+  },
+ ]
 
   useEffect(() => {
     const handleScrolling = window.addEventListener("scroll", () => {
