@@ -5,8 +5,10 @@ import Home from "./page/Home";
 import Movies from "./page/Movies";
 import TvShows from "./page/TvShows";
 import Team from "./page/Team";
+
 import FullMovie from "./components/FullMovie/FullMovie";
 import FullTvShow from "./components/FullTvShow/FullTvShow";
+
 import Nav from "./components/Nav/Nav";
 
 function App() {
