@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Switch from "@material-ui/core/Switch";
 import Comedies from "../components/Comedy/Comedy";
 import MostPopularMov from "../components/MostPopularMovies/MostPopularMovies";
+import TopRatedMov from "../components/TopRatedMov/TopRatedMov";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 const Home = ({ setGetMovieId, light, handleDarkLight }) => {
@@ -60,6 +61,7 @@ const Home = ({ setGetMovieId, light, handleDarkLight }) => {
      
      
       <NewReleases light={light} setGetMovieId={setGetMovieId} />
+      <TopRatedMov light={light} setGetMovieId={setGetMovieId} />
       <MostPopularMov light={light} setGetMovieId={setGetMovieId} />
       <ActionAdventure light={light} setGetMovieId={setGetMovieId} />
       <Comedies light={light} setGetMovieId={setGetMovieId} />
