@@ -29,7 +29,7 @@ function App() {
         <Route exact path="/movies">
           <Movies setGetMovieId={setGetMovieId} />
         </Route>
-        <Route path="/tvshows" component={TvShows} />
+        <Route path="/tvshows"><TvShows setGetMovieId={setGetMovieId}/></Route>
         <Route path="/team" component={Team} />
         <Route exact path="/movie/:title">
           <FullMovie movieId={getMovieId} setGetMovieId={setGetMovieId} />
