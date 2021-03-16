@@ -40,7 +40,9 @@ function App() {
         <Route exact path="/tvshows">
           <TvShows light={light} setGetTvShowId={setGetTvShowId} />
         </Route>
-        <Route path="/team" component={Team} />
+        <Route path="/team">
+          <Team light={light} />
+        </Route>
         <Route exact path="/movie/:title">
           <FullMovie
             movieId={getMovieId}
