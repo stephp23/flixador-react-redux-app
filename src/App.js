@@ -27,12 +27,21 @@ function App() {
           />
         </Route>
         <Route exact path="/movies">
-          <Movies setGetMovieId={setGetMovieId} />
+          <Movies
+            setGetMovieId={setGetMovieId}
+            handleDarkLight={handleDarkLight}
+            light={light}
+          />
         </Route>
         <Route path="/tvshows" component={TvShows} />
         <Route path="/team" component={Team} />
         <Route exact path="/movie/:title">
-          <FullMovie movieId={getMovieId} setGetMovieId={setGetMovieId} />
+          <FullMovie
+            movieId={getMovieId}
+            setGetMovieId={setGetMovieId}
+            handleDarkLight={handleDarkLight}
+            light={light}
+          />
         </Route>
       </Switch>
     </div>

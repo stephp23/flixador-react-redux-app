@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./ChildrenFamily.css";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const ChildrenFamily = ({ setGetMovieId }) => {
+const ChildrenFamily = ({ setGetMovieId, light }) => {
   const [children, setChildren] = useState([]);
   const fetchChildrenFamily = async () => {
     let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_APIKEY}&with_genres=10749`;
@@ -16,7 +16,9 @@ const ChildrenFamily = ({ setGetMovieId }) => {
   }, []);
   return (
     <div className="row1">
-      <h2>Children & Family</h2>
+      <h2 className={light.checkedA ? "" : "text-light-mood"}>
+        Children & Family
+      </h2>
       <div className="row_posters1">
         {children.map((familyMovies) => {
           return (
