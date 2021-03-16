@@ -40,12 +40,16 @@
   }
   .div-link {
     display: flex;
-    margin-right: 30px;
+    margin-right: 45px;
    justify-content: space-between;
     
   }
   a:link {
     color: white;
+    text-decoration: none;
+  }
+  a:active {
+    color: red;
     text-decoration: none;
   }
   a:visited {
@@ -56,10 +60,7 @@
     color: red;
     text-decoration: none;
   }
-  a:active {
-    color: red;
-    text-decoration: none;
-  }
+  
   
   @media only screen and (max-width: 600px) {
     .div-search {
