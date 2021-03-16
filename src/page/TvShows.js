@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
-const TvShows = ({ setGetMovieId }) => {
+const TvShows = ({ setGetTvShowId, setGetMovieId, light }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
   const [TVShowsPagesRow1, setTVShowsPagesRow1] = useState([]);
@@ -18,7 +18,6 @@ const TvShows = ({ setGetMovieId }) => {
   const [TVShowsPagesRow5, setTVShowsPagesRow5] = useState([]);
   const [show, setShow] = useState(true);
   const fetchTVShowsPagesRow1 = async () => {
-    
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false`;
     const response = await axios.get(URL);
     setTVShowsPagesRow1(response.data.results);
@@ -60,7 +59,7 @@ const TvShows = ({ setGetMovieId }) => {
     };
   }, []);
   return (
-    <div className="app">
+    <div className={light.checkedA ? "app" : "light-mood"}>
       <div className={`nav ${show && "nav__black"}`}>
         <Nav />
       </div>
@@ -99,14 +98,14 @@ const TvShows = ({ setGetMovieId }) => {
           {TVShowsPagesRow1.map((TVShowPage1) => {
             return (
               <Link
-                to={`/movie/${
+                to={`/tvshow/${
                   TVShowPage1?.title ||
                   TVShowPage1?.name ||
                   TVShowPage1?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetMovieId(TVShowPage1.id)}
+                  onClick={() => setGetTvShowId(TVShowPage1.id)}
                   key={TVShowPage1.id}
                   className="row_poster2"
                   src={`${imgUrl}${TVShowPage1.poster_path}`}
@@ -119,9 +118,9 @@ const TvShows = ({ setGetMovieId }) => {
         <div className="row_posters2">
           {TVShowsPagesRow2.map((TVShowPage2) => {
             return (
-              <Link to={`/movie/${TVShowPage2?.orignal_name}`}>
+              <Link to={`/tvshow/${TVShowPage2?.orignal_name}`}>
                 <img
-                  onClick={() => setGetMovieId(TVShowPage2.id)}
+                  onClick={() => setGetTvShowId(TVShowPage2.id)}
                   key={TVShowPage2.id}
                   className="row_poster2"
                   src={`${imgUrl}${TVShowPage2.poster_path}`}
@@ -135,14 +134,14 @@ const TvShows = ({ setGetMovieId }) => {
           {TVShowsPagesRow3.map((TVShowPage3) => {
             return (
               <Link
-                to={`/movie/${
+                to={`/tvshow/${
                   TVShowPage3?.title ||
                   TVShowPage3?.name ||
                   TVShowPage3?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetMovieId(TVShowPage3.id)}
+                  onClick={() => setGetTvShowId(TVShowPage3.id)}
                   key={TVShowPage3.id}
                   className="row_poster2"
                   src={`${imgUrl}${TVShowPage3.poster_path}`}
@@ -156,14 +155,14 @@ const TvShows = ({ setGetMovieId }) => {
           {TVShowsPagesRow4.map((TVShowPage4) => {
             return (
               <Link
-                to={`/movie/${
+                to={`/tvshow/${
                   TVShowPage4?.title ||
                   TVShowPage4?.name ||
                   TVShowPage4?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetMovieId(TVShowPage4.id)}
+                  onClick={() => setGetTvShowId(TVShowPage4.id)}
                   key={TVShowPage4.id}
                   className="row_poster2"
                   src={`${imgUrl}${TVShowPage4.poster_path}`}
@@ -177,13 +176,13 @@ const TvShows = ({ setGetMovieId }) => {
           {TVShowsPagesRow5.map((TVShowPage5) => {
             return (
               <Link
-                to={`/movie/${
+                to={`/tvshow/${
                   (TVShowPage5?.title && TVShowPage5?.name) ||
                   TVShowPage5?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetMovieId(TVShowPage5.id)}
+                  onClick={() => setGetTvShowId(TVShowPage5.id)}
                   key={TVShowPage5.id}
                   className="row_poster2"
                   src={`${imgUrl}${TVShowPage5.poster_path}`}
@@ -199,4 +198,3 @@ const TvShows = ({ setGetMovieId }) => {
 };
 
 export default TvShows;
-
