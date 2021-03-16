@@ -5,42 +5,43 @@ import Nav from "../components/Nav/Nav";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Footer from "../components/Footer/Footer";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
 const TvShows = ({ setGetTvShowId, setGetMovieId, light }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
-  const [TVShowsPagesRow1, setTVShowsPagesRow1] = useState([]);
-  const [TVShowsPagesRow2, setTVShowsPagesRow2] = useState([]);
-  const [TVShowsPagesRow3, setTVShowsPagesRow3] = useState([]);
-  const [TVShowsPagesRow4, setTVShowsPagesRow4] = useState([]);
-  const [TVShowsPagesRow5, setTVShowsPagesRow5] = useState([]);
+  const [tvShowsPagesRow1, setTvShowsPagesRow1] = useState([]);
+  const [tvShowsPagesRow2, setTvShowsPagesRow2] = useState([]);
+  const [tvShowsPagesRow3, setTvShowsPagesRow3] = useState([]);
+  const [tvShowsPagesRow4, setTvShowsPagesRow4] = useState([]);
+  const [tvShowsPagesRow5, setTvShowsPagesRow5] = useState([]);
   const [show, setShow] = useState(true);
   const fetchTVShowsPagesRow1 = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false`;
     const response = await axios.get(URL);
-    setTVShowsPagesRow1(response.data.results);
+    setTvShowsPagesRow1(response.data.results);
   };
   const fetchTVShowsPagesRow2 = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&sort_by=popularity.desc&page=2&timezone=America%2FNew_York&include_null_first_air_dates=false`;
     const response = await axios.get(URL);
-    setTVShowsPagesRow2(response.data.results);
+    setTvShowsPagesRow2(response.data.results);
   };
   const fetchTVShowsPagesRow3 = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&sort_by=popularity.desc&page=3&timezone=America%2FNew_York&include_null_first_air_dates=false`;
     const response = await axios.get(URL);
-    setTVShowsPagesRow3(response.data.results);
+    setTvShowsPagesRow3(response.data.results);
   };
   const fetchTVShowsPagesRow4 = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&sort_by=popularity.desc&page=4&timezone=America%2FNew_York&include_null_first_air_dates=false`;
     const response = await axios.get(URL);
-    setTVShowsPagesRow4(response.data.results);
+    setTvShowsPagesRow4(response.data.results);
   };
   const fetchTVShowsPagesRow5 = async () => {
     let URL = `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_APIKEY}&language=en-US&sort_by=popularity.desc&page=5&timezone=America%2FNew_York&include_null_first_air_dates=false`;
     const response = await axios.get(URL);
-    setTVShowsPagesRow5(response.data.results);
+    setTvShowsPagesRow5(response.data.results);
   };
 
   useEffect(() => {
@@ -95,104 +96,105 @@ const TvShows = ({ setGetTvShowId, setGetMovieId, light }) => {
           ""
         )}
         <div className="row_posters2">
-          {TVShowsPagesRow1.map((TVShowPage1) => {
+          {tvShowsPagesRow1.map((tvShowPage1) => {
             return (
               <Link
                 to={`/tvshow/${
-                  TVShowPage1?.title ||
-                  TVShowPage1?.name ||
-                  TVShowPage1?.orignal_name
+                  tvShowPage1?.title ||
+                  tvShowPage1?.name ||
+                  tvShowPage1?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetTvShowId(TVShowPage1.id)}
-                  key={TVShowPage1.id}
+                  onClick={() => setGetTvShowId(tvShowPage1.id)}
+                  key={tvShowPage1.id}
                   className="row_poster2"
-                  src={`${imgUrl}${TVShowPage1.poster_path}`}
-                  alt={TVShowPage1.name}
+                  src={`${imgUrl}${tvShowPage1.poster_path}`}
+                  alt={tvShowPage1.name}
                 />
               </Link>
             );
           })}
         </div>
         <div className="row_posters2">
-          {TVShowsPagesRow2.map((TVShowPage2) => {
+          {tvShowsPagesRow2.map((tvShowPage2) => {
             return (
-              <Link to={`/tvshow/${TVShowPage2?.orignal_name}`}>
+              <Link to={`/tvshow/${tvShowPage2?.orignal_name}`}>
                 <img
-                  onClick={() => setGetTvShowId(TVShowPage2.id)}
-                  key={TVShowPage2.id}
+                  onClick={() => setGetTvShowId(tvShowPage2.id)}
+                  key={tvShowPage2.id}
                   className="row_poster2"
-                  src={`${imgUrl}${TVShowPage2.poster_path}`}
-                  alt={TVShowPage2.name}
+                  src={`${imgUrl}${tvShowPage2.poster_path}`}
+                  alt={tvShowPage2.name}
                 />
               </Link>
             );
           })}
         </div>
         <div className="row_posters2">
-          {TVShowsPagesRow3.map((TVShowPage3) => {
+          {tvShowsPagesRow3.map((tvShowPage3) => {
             return (
               <Link
                 to={`/tvshow/${
-                  TVShowPage3?.title ||
-                  TVShowPage3?.name ||
-                  TVShowPage3?.orignal_name
+                  tvShowPage3?.title ||
+                  tvShowPage3?.name ||
+                  tvShowPage3?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetTvShowId(TVShowPage3.id)}
-                  key={TVShowPage3.id}
+                  onClick={() => setGetTvShowId(tvShowPage3.id)}
+                  key={tvShowPage3.id}
                   className="row_poster2"
-                  src={`${imgUrl}${TVShowPage3.poster_path}`}
-                  alt={TVShowPage3.name}
+                  src={`${imgUrl}${tvShowPage3.poster_path}`}
+                  alt={tvShowPage3.name}
                 />
               </Link>
             );
           })}
         </div>
         <div className="row_posters2">
-          {TVShowsPagesRow4.map((TVShowPage4) => {
+          {tvShowsPagesRow4.map((tvShowPage4) => {
             return (
               <Link
                 to={`/tvshow/${
-                  TVShowPage4?.title ||
-                  TVShowPage4?.name ||
-                  TVShowPage4?.orignal_name
+                  tvShowPage4?.title ||
+                  tvShowPage4?.name ||
+                  tvShowPage4?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetTvShowId(TVShowPage4.id)}
-                  key={TVShowPage4.id}
+                  onClick={() => setGetTvShowId(tvShowPage4.id)}
+                  key={tvShowPage4.id}
                   className="row_poster2"
-                  src={`${imgUrl}${TVShowPage4.poster_path}`}
-                  alt={TVShowPage4.name}
+                  src={`${imgUrl}${tvShowPage4.poster_path}`}
+                  alt={tvShowPage4.name}
                 />
               </Link>
             );
           })}
         </div>
         <div className="row_posters2">
-          {TVShowsPagesRow5.map((TVShowPage5) => {
+          {tvShowsPagesRow5.map((tvShowPage5) => {
             return (
               <Link
                 to={`/tvshow/${
-                  (TVShowPage5?.title && TVShowPage5?.name) ||
-                  TVShowPage5?.orignal_name
+                  (tvShowPage5?.title && tvShowPage5?.name) ||
+                  tvShowPage5?.orignal_name
                 }`}
               >
                 <img
-                  onClick={() => setGetTvShowId(TVShowPage5.id)}
-                  key={TVShowPage5.id}
+                  onClick={() => setGetTvShowId(tvShowPage5.id)}
+                  key={tvShowPage5.id}
                   className="row_poster2"
-                  src={`${imgUrl}${TVShowPage5.poster_path}`}
-                  alt={TVShowPage5.name}
+                  src={`${imgUrl}${tvShowPage5.poster_path}`}
+                  alt={tvShowPage5.name}
                 />
               </Link>
             );
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
