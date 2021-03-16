@@ -1,4 +1,7 @@
-
+* {
+  background-color: #111;
+  color: aliceblue;
+}
   .row-movie{
     margin-top: 70px;
   }
@@ -39,13 +42,14 @@
   .teamdiv {
     display: flex;
     margin-top: 70px;
+    justify-content: center;
   }
 
   .imageTeammate {
     height: 400px;
     width: 256.51px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 40px;
   }
 
   .teamDescription {
