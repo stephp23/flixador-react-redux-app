@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
-const FullMovie = ({ movieId, setGetMovieId }) => {
+const FullMovie = ({ movieId, setGetMovieId, light }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
   const [fullMoviebanar, setFullMoviebanar] = useState([]);
@@ -64,7 +64,7 @@ const FullMovie = ({ movieId, setGetMovieId }) => {
   };
 
   return (
-    <div className="app">
+    <div className={light.checkedA ? "app" : "light-mood"}>
       <>
         <header
           className="banar"
@@ -124,22 +124,28 @@ const FullMovie = ({ movieId, setGetMovieId }) => {
         )}
         {fulltrailerUrl && <YouTube videoId={fulltrailerUrl} opts={opts} />}
       </>
-      <div className="full-movie-dea">
+      <div
+        className={light.checkedA ? "full-movie-dea" : "full-movie-dea-light"}
+      >
         <Typography variant="h3">{fullMoviebanar.original_title}</Typography>
-        <div className="date-runtime">
+        <div className={light.checkedA ? "date-runtime" : "date-runtime-light"}>
           <Typography variant="h5">{fullMoviebanar.release_date}</Typography>
         </div>
-        <div className="date-runtime">
+        <div className={light.checkedA ? "date-runtime" : "date-runtime-light"}>
           <Typography variant="h5">
             Run Time : {fullMoviebanar.runtime} min
           </Typography>
         </div>
       </div>
-      <div className="full-movie-det">
+      <div
+        className={light.checkedA ? "full-movie-det" : "full-movie-det-light"}
+      >
         <Typography variant="h6">{fullMoviebanar.overview}</Typography>
       </div>
       <div className="row1">
-        <h2>Similar Movies</h2>
+        <h2 className={light.checkedA ? "" : "text-light-mood"}>
+          Similar Movies
+        </h2>
         <div className="row_posters1">
           {similarMovie.map((similar, index) => {
             return (

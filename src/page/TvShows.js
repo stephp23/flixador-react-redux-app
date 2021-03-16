@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
-const TvShows = ({ setGetTvShowId, setGetMovieId }) => {
+const TvShows = ({ setGetTvShowId, setGetMovieId, light }) => {
   const { movies } = useSelector((state) => state.movies);
   const text = useSelector((state) => state.movies.text);
   const [TVShowsPagesRow1, setTVShowsPagesRow1] = useState([]);
@@ -59,7 +59,7 @@ const TvShows = ({ setGetTvShowId, setGetMovieId }) => {
     };
   }, []);
   return (
-    <div className="app">
+    <div className={light.checkedA ? "app" : "light-mood"}>
       <div className={`nav ${show && "nav__black"}`}>
         <Nav />
       </div>
