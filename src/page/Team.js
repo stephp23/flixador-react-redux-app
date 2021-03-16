@@ -20,18 +20,16 @@ const Team = () => {
     lastName: "Omer",
     teamTitle: "Full-Stack Web Developer",
     teamImage: Ayman
-    }, {
-      firstName: "Katherine",
-      lastName: "Fernandez",
-      teamTitle: "Product Designer",
-      teamImage: Katherine
-    }, {
-      firstName: "Leesel",
-      lastName: "Fraser",
-      teamTitle: "Web Developer",
-      teamImage: Leesel
-    }, {
-    
+  }, {
+    firstName: "Katherine",
+    lastName: "Fernandez",
+    teamTitle: "Product Designer",
+    teamImage: Katherine
+  }, {
+    firstName: "Leesel",
+    lastName: "Fraser",
+    teamTitle: "Web Developer",
+    teamImage: Leesel
   }]
 
   useEffect(() => {
