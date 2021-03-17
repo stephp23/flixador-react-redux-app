@@ -9,7 +9,7 @@ import Katherine from "./teamImages/katherine.png";
 import Leesel from "./teamImages/leesel.png";
 import Footer from "../components/Footer/Footer";
 
-const Team = () => {
+const Team = ({light}) => {
   const [show, setShow] = useState(true);
 
   const teamMember = [{
@@ -33,7 +33,7 @@ const Team = () => {
     }, {
     firstName: "Leesel",
     lastName: "Fraser",
-    teamTitle: "Web Developer",
+    teamTitle: "Full-Stack Web Developer",
     teamImage: Leesel,
     linkedin: "https://www.linkedin.com/in/leesel/"
   },
@@ -41,17 +41,17 @@ const Team = () => {
 
   useEffect(() => {
     const handleScrolling = window.addEventListener("scroll", () => {
-      window.scrollY > -20 ? setShow(true) : setShow(false);
+      window.scrollY > 200 ? setShow(true) : setShow(false);
     });
     return () => {
       window.removeEventListener("scroll", handleScrolling);
     };
   }, []);
   return (
-    <div className="app">
+    <div className={light.checkedA ? "app" : "light-mood"}>
       <div className={`nav ${show && "nav__black"}`}>
         <Nav />
-        <div className="teamdiv">
+        <div className="teamdiv card flex-box wrapper-flex">
           {teamMember.map((item, index) => {
             return <div key={index}>
               <a href={item.linkedin} target="_blank"><img className="imageTeammate" src={item.teamImage} alt={item.firstName} /></a>

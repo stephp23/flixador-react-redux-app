@@ -33,7 +33,7 @@ const Nav = () => {
           </h4>
           <h4 className="router-headr">
             {" "}
-            <Link to="/tvshows">Tv Shows</Link>
+            <Link to="/tvshows">TV Shows</Link>
           </h4>
           <h4 className="router-headr">
             <Link to="/team">Team</Link>
