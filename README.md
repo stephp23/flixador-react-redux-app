@@ -127,13 +127,14 @@ The Flixador MVP version will have the following features:
 - Title keyword search 
 - Search feature for only movie titles
 - Search feature for only show titles
+- In-screen trailer feature
 - Team information section
+
 
 ## Post MVP
 
 After the Flixador MVP, we will explore adding the following features:
 
-- In-screen trailer feature
 
 
 <!-- BUILT WITH -->
