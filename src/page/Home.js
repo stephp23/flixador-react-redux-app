@@ -61,8 +61,8 @@ const Home = ({ setGetMovieId, light, handleDarkLight }) => {
      
      
       <NewReleases light={light} setGetMovieId={setGetMovieId} />
-      <TopRatedMov light={light} setGetMovieId={setGetMovieId} />
       <MostPopularMov light={light} setGetMovieId={setGetMovieId} />
+      <TopRatedMov light={light} setGetMovieId={setGetMovieId} />
       <ActionAdventure light={light} setGetMovieId={setGetMovieId} />
       <Comedies light={light} setGetMovieId={setGetMovieId} />
       <ScifiHorror light={light} setGetMovieId={setGetMovieId} />
