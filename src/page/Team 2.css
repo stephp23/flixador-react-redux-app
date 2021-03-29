@@ -1,0 +1,56 @@
+/* * {
+  background-color: #111;
+  color: aliceblue;
+} */
+
+.imageTeammate:hover {
+  transform: scale(1.08);
+}
+
+.teamdiv {
+  display: flex;
+  margin-top: 70px;
+  justify-content: center;
+}
+
+.imageTeammate {
+  height: 300px;
+  width: auto;
+  padding: 20px;
+  border-radius: 40px;
+  transition: transform 450ms;
+  text-align: center;
+}
+
+.teamDescription {
+  text-align: center;
+  color: white;
+}
+.teamDescription-light {
+  text-align: center;
+  color: #111;
+}
+.wrapper-flex {
+  /* display: flex; */
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 200px;
+  margin-left: 20px;
+}
+
+/* .flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  width: 250px;
+  margin: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+} */
