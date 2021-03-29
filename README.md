@@ -10,7 +10,6 @@
 <br />
 <p align="center">
   <a href="https://github.com/stephp23/flixador-react-redux-app">
-    <img src="src\images\baby_cheetah.png" alt="Cheetah">
     <img src="src\images\banner.png" alt="Logo">
   </a>
 
@@ -147,6 +146,7 @@ This project was conceptualized by building wireframes and prototypes using Figm
 - [JavaScript](https://javascript.com)
 - [ReactJS](https://reactjs.org)
 - [themoviedbAPI](https://www.themoviedb.org/documentation/api)
+- [MovieTrailerPackage](https://www.npmjs.com/package/movie-trailer)
 - [Material UI](https://material-ui.com/)
 
 <!-- ACKNOWLEDGEMENTS -->
