@@ -96,7 +96,9 @@ const FullMovie = ({ movieId, setGetMovieId, light }) => {
         </header>
         {movies ? (
           <div className="row1">
-            <h2>{text ? `what you looking for : ${text}` : ""}</h2>
+            <h2 className={light.checkedA ? "" : "text-light-mood"}>
+              {text ? `what you looking for : ${text}` : ""}
+            </h2>
             <div className="row_posters1">
               {movies.map((actionMovie) => {
                 return (
