@@ -6,7 +6,7 @@ import { primaryColor, textColor, fontFamily } from "./Scheme";
 const useStyles = makeStyles((theme) => ({
   footerContainerCss: {
     background: primaryColor,
-    fontFamily,
+    fontFamily: 'sans-serif',
     width: '100%',
     '& p': {
       padding: '16px',
