@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Footer from "../components/Footer/Footer";
 
-
 const imgUrl = "https://image.tmdb.org/t/p/original";
 
 const Movies = ({ setGetMovieId, light }) => {
@@ -68,7 +67,7 @@ const Movies = ({ setGetMovieId, light }) => {
       <div className="row-movie">
         {movies ? (
           <div className="row2">
-            <h2 className="text-search-movie">
+            <h2 className={light.checkedA ? "" : "text-light-mood"}>
               {text ? `what you looking for : ${text}` : ""}
             </h2>
             <div className="row_posters2">
